@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage with Scaling</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            z-index: 1000;
+            text-align: center;
+            height: 60px; /* Navbar height */
+        }
+
+        /* Left Menu */
+        .left-menu {
+            width: 250px;
+            background-color: #f4f4f4;
+            position: fixed;
+            top: 60px; /* Below navbar */
+            left: 0;
+            height: calc(100vh - 60px);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Collapsible Left Menu (Hide it when collapsed) */
+        .left-menu.collapsed {
+            transform: translateX(-250px);
+        }
+
+        /* Content Area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styling for Small Screens */
+        @media (max-width: 992px) {
+            .left-menu {
+                width: 200px;
+                top: 60px;
+            }
+
+            .left-menu.collapsed {
+                transform: translateX(-200px);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .right-panel {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            /* Show toggle button on smaller screens */
+            .toggle-btn {
+                display: block;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Responsive Webpage</h1>
+        <button class="toggle-btn" onclick="toggleMenu()">☰ Toggle Menu</button>
+    </div>
+
+    <!-- Left Menu -->
+    <div class="left-menu" id="leftMenu">
+        <h3>Left Menu</h3>
+        <ul>
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li><a href="#">Menu Item 3</a></li>
+        </ul>
+    </div>
+
+    <!-- Wrapper for content and right panel -->
+    <div id="pageWrapper" style="display: flex; margin-top: 60px;">
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Main Content Area</h2>
+            <p>Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+Special counsel Jack Smith's final report lays out in no uncertain terms federal prosecutors' position that Donald Trump -- who is set to be inaugurated president in less than a week -- would have been convicted on multiple felonies for his alleged efforts to unlawfully overturn the results of the 2020 election, had voters not decided to send him back to the White House in the 2024 election.
+
+That was one of the primary conclusions included in Smith's final report on his election interference investigation, which the Justice Department released early Tuesday morning after a federal judge, late Monday night, cleared the way for the report's release.
+
+The report lays out the probe that resulted in Trump being charged in 2023 with four felony counts of undertaking a "criminal scheme" to overturn the results of the 2020 election in an effort to subvert democracy and remain in power. Trump pleaded not guilty to all charges.
+
+
+MORE: Special counsel Jack Smith personally denounces Trump's conduct, calls his accusations 'laughable'
+
+The case, as well as Smith's classified documents case against Trump, was dropped following Trump's reelection in November due to a longstanding Justice Department policy prohibiting the prosecution of a sitting president.
+
+"The Department's view that the Constitution prohibits the continued indictment and prosecution of a President is categorical and does not turn on the gravity of the crimes charged, the strength of the Government's proof, or the merits of the prosecution, which the Office stands fully behind," the report said. "Indeed, but for Mr. Trump's election and imminent return to the Presidency, the Office assessed that the admissible evidence was sufficient to obtain and sustain a conviction at trial."
+
+This is the main content area. You can add text, images, or other elements here.</p>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <h3>Right Panel</h3>
+            <p>This section could contain additional content, like ads or notifications.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Responsive Webpage</p>
+    </div>
+
+    <!-- JavaScript to toggle left menu and apply scaling -->
+    <script>
+        // Function to toggle the left menu visibility
+        function toggleMenu() {
+            const menu = document.getElementById("leftMenu");
+            const content = document.querySelector(".content");
+
+            menu.classList.toggle("collapsed");
+
+            if (menu.classList.contains("collapsed")) {
+                content.style.marginLeft = "0"; // When menu is collapsed
+            } else {
+                content.style.marginLeft = "250px"; // When menu is expanded
+            }
+        }
+
+        // Function to scale the page based on screen width
+        function adjustPageScale() {
+            const width = window.innerWidth;
+            const pageWrapper = document.getElementById('pageWrapper'); // Get the wrapper element
+
+            // Apply scale transformation based on screen width
+            if (width >= 992 && width <= 1600) {
+                pageWrapper.style.transform = "scale(0.9)"; // Shrink by 90%
+            } else if (width >= 700 && width <= 767) {
+                pageWrapper.style.transform = "scale(0.8)"; // Shrink by 80%
+            } else if (width >= 600 && width <= 700) {
+                pageWrapper.style.transform = "scale(0.75)"; // Shrink by 75%
+            } else if (width <= 600) {
+                pageWrapper.style.transform = "scale(0.5)"; // Shrink by 50%
+            } else {
+                pageWrapper.style.transform = "scale(1)"; // Default (100% size)
+            }
+        }
+
+        // Listen for window resize event to adjust page scale
+        window.addEventListener('resize', adjustPageScale);
+
+        // Call the function on page load to set the initial scale
+        adjustPageScale();
+    </script>
+
+</body>
+</html>
